@@ -1,0 +1,22 @@
+testCases = int(input())
+outputList = []
+for i in range(testCases):
+  stackList = []
+  noOfCubes = int(input())
+  sideLengths = list(map(int, input().split()))
+  while any(sideLengths):
+    if sideLengths[0] >= sideLengths[-1]:
+      stackList.append(sideLengths[0])
+      sideLengths.pop(0)
+    else:
+      stackList.append(sideLengths[-1])
+      sideLengths.pop(-1)
+    if len(sideLengths) == 1:
+      stackList.append(sideLengths[0])
+      sideLengths.pop(0)
+  if sorted(stackList, reverse = True) == stackList:
+    outputList.append('Yes')
+  else:
+    outputList.append('No')
+for i in outputList:
+  print(i)    
