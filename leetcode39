@@ -1,0 +1,11 @@
+from itertools import combinations_with_replacement
+def combinationSum(candidateList, target):
+    combinationList = []
+    targetList = []
+    minNumber = min(candidateList)
+    maxCombinations = target // minNumber
+    for i in range(1, maxCombinations + 1):
+        combinationList.extend(list(combinations_with_replacement(candidateList, i)))
+    targetList = list([i for i in combinationList if sum(i) == target])
+    return targetList
+print(combinationSum([2, 3, 6, 7], 7))  
