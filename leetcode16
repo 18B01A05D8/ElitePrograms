@@ -1,0 +1,16 @@
+from itertools import combinations
+nums = [-1, 2, 1, 4]
+target = 1
+def threeSumClosest(nums, target):
+  threeNumsList = list(combinations(nums, 3))
+  diffList = []
+  sumList = list(sum(x) for x in threeNumsList)
+  for i in sumList:
+    if i - target < 0:
+      diffList.append(-1 * (i - target))
+    else:
+      diffList.append(i - target)
+  minDiff = min(diffList)
+  ind = diffList.index(minDiff)
+  return threeNumsList[ind]
+print(threeSumClosest(nums, target))
