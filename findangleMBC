@@ -1,0 +1,5 @@
+import math
+length_AB = int(input())
+length_BC = int(input())
+angle = length_AB / length_BC
+print("{}{}".format(round((math.degrees(math.atan(angle)))), chr(176)))
