@@ -1,0 +1,9 @@
+import itertools
+numsList = [-1, 0, 1, 2, -1, -4]
+def threeSum(numsList):
+  threeNumsList = list(combinations(numsList, 3))
+  nums = list(tuple(sorted(i)) for i in threeNumsList)
+  numsSet = list(set(nums))
+  solutionList = list(list(x) for x in numsSet if sum(x) == 0 )
+  return solutionList
+print(threeSum(numsList))
