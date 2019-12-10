@@ -1,0 +1,6 @@
+def arrayRotate(arrayList, k):
+  for i in range(k):
+    arrayList.insert(0, arrayList[-1])
+    arrayList.pop(-1)
+  return arrayList
+print(arrayRotate([1, 2, 3, 4, 5, 6, 7], 3))
