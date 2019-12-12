@@ -1,0 +1,8 @@
+from itertools import combinations
+def sumOfSubsequenceWidths(inputList):
+  combList = []
+  for i in range(2, len(inputList) + 1):
+    combList.extend(combinations(inputList, i))
+  return sum(list((max(comb) - min(comb)) for comb in combList))
+
+sumOfSubsequenceWidths([37,4,35,10,26,12,5,17,4,22,11,40,26,37,5,15,2,24,40,8])
