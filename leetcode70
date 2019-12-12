@@ -1,0 +1,8 @@
+from itertools import product
+def climbingStairs():
+  stepsList = []
+  noOfStairs = int(input())
+  for step in range(1, noOfStairs + 1):
+    stepsList.extend(list(product([1, 2], repeat = step)))
+  return len(list(i for i in stepsList if sum(i) == noOfStairs))
+print(climbingStairs())
