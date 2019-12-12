@@ -1,0 +1,19 @@
+s = 'Sorting1234'
+def orderedString(s):
+  lowerCaseList = []
+  upperCaseList = []
+  evenDigitList = []
+  oddDigitList = []
+  orderString = ""
+  for i in s:
+      if i.islower():
+        lowerCaseList.extend(i)
+      elif i.isupper():
+        upperCaseList.extend(i)
+      elif int(i) % 2 == 1:
+        oddDigitList.extend(i)
+      else:
+        evenDigitList.extend(i)
+  orderdList = sorted(lowerCaseList) +  sorted(upperCaseList) + sorted(oddDigitList) + sorted(evenDigitList)
+  return orderString.join(orderdList)
+print(orderedString(s))
